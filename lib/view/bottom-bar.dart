@@ -22,8 +22,9 @@ String t=  myServices.sharedPrefrence.getString('token')!;
     print('bottom bar');
       print(t);
     List<Widget> pages=[
-//  t=='null'?BottomBarWithoutToken() :Home(),
+
 Home(),
+// HomeScreen(),
   FavoriteView(),
   AccountView(),
   
@@ -39,7 +40,7 @@ Home(),
           builder: (controller) {
             return 
             Container(
-              color: AppColor.primaryColor,
+              // color:  Color(0xffFE738A).withOpacity(0.2),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                 child: GNav(
@@ -50,10 +51,10 @@ print(controller.currentpage);
                   selectedIndex:controller.currentpage ,
                   gap: 8,
                   iconSize: 30,
-                  backgroundColor: AppColor.primaryColor,
-                  color: Color.fromARGB(255, 111, 160, 199),
+                  // backgroundColor:  Color(0xffFE738A).withOpacity(0.2),
+                  color: Color.fromRGBO(236, 20, 81, 0.933),
                   activeColor: Colors.white,
-                  tabBackgroundColor: Color.fromARGB(255, 111, 160, 199),
+                  tabBackgroundColor:Color.fromRGBO(236, 20, 81, 0.933),
                   padding: EdgeInsets.all(9),
                   tabs: [
                     GButton(icon: Icons.home,text: 'home'.tr,),
@@ -68,60 +69,3 @@ print(controller.currentpage);
     );
   }
 }
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:google_nav_bar/google_nav_bar.dart';
-// import 'package:myshop/constants/constants.dart';
-// import 'package:myshop/localization/change-locale.dart';
-// import 'package:myshop/view/account-screen.dart/account-view.dart';
-// import 'package:myshop/view/favorite-screen.dart/favorite-view.dart';
-// import 'package:myshop/view/homeScreen/home.dart';
-// class BottomBar extends StatelessWidget {
-//   // const BottomBar({super.key});
-// List<Widget> pages=[
-// Home(),
-//   FavoriteView(),
-//   AccountView(),
-  
-// ];
-//   @override
-//   Widget build(BuildContext context) {
-//     return 
-//     Scaffold(
-//       body:GetBuilder<LocaleController>(
-//         builder: (controller) {
-//           return pages.elementAt(controller.currentpage);
-//         }
-//       ) ,
-//       bottomNavigationBar: GetBuilder<LocaleController>(
-//           builder: (controller) {
-//             return Container(
-//               color: AppColor.primaryColor,
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
-//                 child: GNav(
-//                   onTabChange: (val){
-// controller.changepage(val);
-// print(controller.currentpage);
-//                   },
-//                   selectedIndex:controller.currentpage ,
-//                   gap: 8,
-//                   iconSize: 30,
-//                   backgroundColor: AppColor.primaryColor,
-//                   color: Color.fromARGB(255, 111, 160, 199),
-//                   activeColor: Colors.white,
-//                   tabBackgroundColor: Color.fromARGB(255, 111, 160, 199),
-//                   padding: EdgeInsets.all(9),
-//                   tabs: [
-//                     GButton(icon: Icons.home,text: 'Home',),
-//                          GButton(icon: Icons.favorite_border_outlined,text: 'Favorite',),
-//                               GButton(icon: Icons.person,text: 'Account',),
-//                   ],
-//                 ),
-//               ),
-//             );
-//           }
-//         ),
-//     );
-//   }
-// }

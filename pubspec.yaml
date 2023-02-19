@@ -42,6 +42,8 @@ dependencies:
   dartz:
   http:
   lottie:
+  awesome_dialog:
+  animated_splash_screen:
   flutter_otp_text_field:
   shared_preferences:
   image_picker:

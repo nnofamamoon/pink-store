@@ -59,7 +59,7 @@ try{
   
     print('ddddd');
     // print('http://192.168.239.189:8000/api/getCategoryitem/'+data);
-var response=await http.get(Uri.parse('http://192.168.45.189:8000/api/getCategoryitem/$data'));
+var response=await http.get(Uri.parse('http://192.168.60.189:8000/api/getCategoryitem/$data'));
 print(response);
 if(response.statusCode == 200 || response.statusCode == 201){
   print(200);
@@ -106,11 +106,11 @@ try{
  print('kh');
 var response=await request.send();
 print('ss');
-var res=await http.Response.fromStream(response);
-// final responsedata=jsonDecode(res.body);
-print(res.body);
-print(res.statusCode);
-if(res.statusCode==200 || res.statusCode==201){
+// var res=await http.Response.fromStream(response);
+// // final responsedata=jsonDecode(res.body);
+// print(res.body);
+// print(res.statusCode);
+if(response.statusCode==200 || response.statusCode==201){
  print(200);
   return Right({"status":"success"}); 
 }else{
@@ -141,7 +141,7 @@ if(response.statusCode == 200 || response.statusCode == 201){
        print('verifycode');
   var responsebody=jsonDecode(response.body);
  
-  // print(responsebody);
+  print(responsebody);
   // return Right({"status":"success"});
   return Right(responsebody);
   

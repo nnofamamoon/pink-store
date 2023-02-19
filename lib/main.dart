@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myshop/controller/account-controller.dart';
@@ -14,6 +15,7 @@ import 'package:myshop/view/authentication/login-screen.dart';
 import 'package:myshop/view/bottom-bar.dart';
 import 'package:myshop/view/homeScreen/home.dart';
 import 'package:myshop/view/onboarding/onboarding.dart';
+import 'package:myshop/view/splash/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'view/bottom-bar-without-token/BottomBar-Without-Token-view.dart';
@@ -24,6 +26,8 @@ void main()async {
   await initialServices();
     MyServices myServices=Get.find();
   initScreen=await myServices.sharedPrefrence.getInt("initScreen");
+  print('initScreenmain');
+  print(initScreen);
   await  myServices.sharedPrefrence.setInt("initScreen", 1);
 final pref=await SharedPreferences.getInstance();
  l=pref.getString('token');
@@ -55,8 +59,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home:initScreen==0 || initScreen==null? OnBoardingScreen():BottomBar(),
-     home:initScreen==0 || initScreen==null? OnBoardingScreen():l=='null'?LoginScreen():BottomBar(),
+    home: SplashScreen(),
+    //  home:initScreen==0 || initScreen==null? OnBoardingScreen():l=='null'?LoginScreen():BottomBar(),
     );
   }
 }

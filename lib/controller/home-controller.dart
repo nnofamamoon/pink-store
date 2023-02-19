@@ -8,6 +8,7 @@ import 'package:myshop/services/my-data.dart';
 import 'package:myshop/services/status-request.dart';
 import 'package:myshop/model/discount-model.dart';
 import 'package:myshop/view/category-section/one-category.dart';
+import 'package:myshop/view/search/search_screen.dart';
 class HomeController extends GetxController{
  
    int currentpage=0;
@@ -66,4 +67,9 @@ Get.to(OneCategory(),arguments: {
   update();
   }
  
+  goToSearchPage(allproducts){
+     Get.to(SearchScreen(),arguments: {
+      "allproducts":allproducts,
+     });
+  }
 }

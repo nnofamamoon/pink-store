@@ -1,13 +1,14 @@
  import 'package:flutter/material.dart';
 class AppColor{
-static const Color primaryColor= Color.fromARGB(255, 243, 167, 220);
+// static const Color primaryColor= Color.fromARGB(255, 243, 167, 220);
+static const Color primaryColor=Color.fromRGBO(236, 20, 81, 0.933);
 }
 
 class URL{
-  static const String primaryUrl='http://192.168.45.189:8000/api/';
+  static const String primaryUrl='http://192.168.60.189:8000/api/';
   //  static const String primaryUrl='http://pinkshop.byethost31.com/api/';
 
-  static const String imageUrl='http://192.168.45.189:8000/';
+  static const String imageUrl='http://192.168.60.189:8000/';
     // static const String imageUrl='http://pinkshop.byethost31.com/';
 
   static const String getDiscountProduct='${primaryUrl}'+'homeProduct';

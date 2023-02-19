@@ -18,7 +18,7 @@ class AccountView extends StatelessWidget {
   // AccountController accountController=Get.find();
   AccountController accountController=Get.put(AccountController());
     return Scaffold(
-      backgroundColor: AppColor.primaryColor,
+      // backgroundColor: AppColor.primaryColor,
       body: Theme(
         data: Theme.of(context).copyWith(
           brightness: Brightness.dark,
@@ -30,53 +30,7 @@ class AccountView extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 30,),
-            //  Container(
-            //   width: double.infinity,
-            //   height: 50,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(10,),color: Colors.white
-            //   ),
-            //   child: ListTile(
-            //     leading: Icon(Icons.language,weight: 30,),
-            //     title: InkWell(
-            //       onTap: (){
-            //           localeController.changeLanguage("ar");
-            //       },
-            //       child: Text('Arabic'.tr,style: TextStyle(fontFamily:localeController.myloc=="en"?'NotoSansLimbu':"Tajawal",fontSize: 15),)),
-            //   ),
-            //  ),
-            //  SizedBox(height: 10,),
-            //   Container(
-            //   width: double.infinity,
-            //   height: 50,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(10,),color: Colors.white
-            //   ),
-            //   child: ListTile(
-            //     leading: Icon(Icons.language,weight: 30,),
-            //     title: InkWell(
-            //       onTap: (){
-            //           localeController.changeLanguage("en");
-            //       },
-            //       child: Text('English'.tr,style: TextStyle(fontFamily:localeController.myloc=="en"?'NotoSansLimbu':"Tajawal",fontSize: 15))),
-            //   ),
-            //  ),
-            //    SizedBox(height: 10,),
-            //   Container(
-            //   width: double.infinity,
-            //   height: 50,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(10,),color: Colors.white
-            //   ),
-            //   child: ListTile(
-            //     leading: Icon(Icons.logout_outlined,weight: 30,),
-            //     title: InkWell(
-            //       onTap: (){
-            //         loggedController.logout();
-            //       },
-            //       child: Text('Logout'.tr,style: TextStyle(fontFamily:localeController.myloc=="en"?'NotoSansLimbu':"Tajawal",fontSize: 15))),
-            //   ),
-            //  ),
+        
           GetBuilder<AccountController>(
             builder: (controller) {
               return Column(

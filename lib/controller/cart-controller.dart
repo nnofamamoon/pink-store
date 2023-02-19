@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myshop/controller/handling-data-controller.dart';
@@ -152,7 +153,7 @@ print('success');
   }
   ///////////////////////////////////////////////////////////////////
   OrderData orderdata=OrderData(Get.find());
-  order()async{
+  order(BuildContext context)async{
    token=myServices.sharedPrefrence.getString('token')??'null';
      update();
     statusRequest=StatusRequest.loading;
@@ -169,18 +170,25 @@ print('success');
   productlist.clear();
   statusRequest=StatusRequest.none;
   update();
-Get.defaultDialog(
-  title: 'Success',
-  middleText: 'Order complete successfully',
-  titleStyle: TextStyle(fontFamily: 'NotoSansLimbu',fontWeight: FontWeight.bold,fontSize: 18),
-  middleTextStyle: TextStyle(fontFamily: 'NotoSansLimbu'),
-  textConfirm: 'OK',
+// Get.defaultDialog(
+//   title: 'Success',
+//   middleText: 'Order complete successfully',
+//   titleStyle: TextStyle(fontFamily: 'NotoSansLimbu',fontWeight: FontWeight.bold,fontSize: 18),
+//   middleTextStyle: TextStyle(fontFamily: 'NotoSansLimbu'),
+//   textConfirm: 'OK',
   
-  onConfirm: (){
-    Get.to(BottomBar());
-  }
-);
-// Get.to(BottomBar());
+//   onConfirm: (){
+//     Get.to(BottomBar());
+//   }
+// );
+AwesomeDialog(
+  context: context,
+  dialogType: DialogType.success,
+  animType: AnimType.bottomSlide,
+  title: 'Success',
+  desc: 'Order complete successfully',
+  btnOkOnPress: (){  Get.to(BottomBar());}
+).show();
 
 print('success');
  

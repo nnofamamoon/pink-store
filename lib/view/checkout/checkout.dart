@@ -24,7 +24,7 @@ class CheckOut extends StatelessWidget {
                     children: [
                    Padding(
                      padding: const EdgeInsets.only(top:8.0),
-                     child: Text('Delivery Method'),
+                     child: Text('Payment Method'),
                    ),
              Row(
             children: [
@@ -71,7 +71,7 @@ class CheckOut extends StatelessWidget {
           ),
             Flexible(
                                    child: TextButton(onPressed: (){
-                    cartController.order();            
+                    cartController.order(context);            
                                    }, 
                                    child: Container(
                                     width: 140,
